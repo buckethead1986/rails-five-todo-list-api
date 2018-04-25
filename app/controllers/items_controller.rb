@@ -16,6 +16,7 @@ class ItemsController < ApplicationController
     json_response(@todo, :created)
   end
 
+  #head :no_content returns a 200 status code when theres no body.
   def update
     @item.update(item_params)
     head :no_content
