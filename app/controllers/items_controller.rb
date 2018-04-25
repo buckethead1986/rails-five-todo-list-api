@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  #before actions load actions in /concerns loaded through applicaiton controller
   before_action :set_todo
   before_action :set_todo_item, only: [:show, :update, :destroy]
 
