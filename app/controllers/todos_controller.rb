@@ -1,6 +1,7 @@
 class TodosController < ApplicationController
   before_action :set_todo, only: [:show, :update, :destroy]
 
+  #json_response defined in concerns/response. its 'render json: @todos, status: status' to give a status code as well 
   def index
     @todos = Todo.all
     json_response(@todos)
@@ -31,6 +32,7 @@ class TodosController < ApplicationController
     params.permit(:title, :created_by)
   end
 
+  #I was taught find_by, but looks like its being deprecated
   def set_todo
     @todo = Todo.find(params[:id])
   end
